@@ -23,6 +23,7 @@ https://github.com/tr4nscr1pt/guiwallet
 
 ```
 cd guiwallet
+remove old cryptonote folder
 ln -s ../ cryptonote
 ```
 
