@@ -12,24 +12,24 @@ http://www.cmake.org/
 http://www.boost.org/
 https://www.qt.io/
 
-**1. Clone wallet sources**
+**1. Clone wallet sources to KMC folder**
 
 ```
-git clone https://github.com/BEASTLICK-INTERNET-POLICY-COMMISSION/bipcoinwallet.git
+https://github.com/tr4nscr1pt/guiwallet
 ```
 
 
-**2. Create git submodule at the same level as `src`. For example:**
+**2.  Set symbolic link to coin sources at the same level as src. For example:**
 
 ```
-cd bipcoinwallet
-git submodule update --init -- "cryptonote"
+cd guiwallet
+ln -s ../ cryptonote
 ```
 
 **3 (Linux). Build**
 
 ```
-cp cryptonote/src/Platform/Posix/System/* cryptonote/src/System
+
 mkdir build && cd build && cmake .. && make
 ```
 
@@ -38,11 +38,11 @@ mkdir build && cd build && cmake .. && make
 ```
 cmake -G "Visual Studio 12" -DCMAKE_PREFIX_PATH=C:\Qt\5.7\msvc2013
 ```
-This will create a bipcoin.sln file which you can open in Visual Studio and build.
+This will create a guiwallet.sln file which you can open in Visual Studio and build.
 
 **4 (Windows). Additional Files Required to run**
 
-For Windows, some QT files are also required. Copy the following from Qt to the BipCoin executable folder:
+For Windows, some QT files are also required. Copy the following from Qt to the guiwallet executable folder:
 
 From C:\Qt\5.7\msvc2013\bin:
 ```
@@ -56,16 +56,4 @@ platforms\qwindows.dll
 ```
 If you are making a debug build you will need the altenatives to the above files which end in 'd', Like Qt5Coded.dll instead of Qt5Code.dll
 
-The Folder structure should look like this:
-```
-Directory of C:\bipcoin
-         1,742,336 bipcoin.exe
-        77,163,152 cryptonote.lib
-        <DIR>          platforms
-         4,673,536 Qt5Core.dll
-         4,868,096 Qt5Gui.dll
-         4,486,656 Qt5Widgets.dll
 
- Directory of C:\bipcoin\platforms
-           988,160 qwindows.dll
-```
