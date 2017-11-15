@@ -1,0 +1,3 @@
+[submodule "cryptonote"]
+	path = cryptonote
+	url = https://github.com/BEASTLICK-INTERNET-POLICY-COMMISSION/bipcoin.git
